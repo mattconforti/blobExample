@@ -5,14 +5,15 @@
         <title>download_blob_ex</title>
     </head>
     <body>
-        <button onclick="download('example text', 'fileName.txt', 'text/plain')">Generate text file</button>
-        <a href="" id="d_button">click here to download!</a>
+        <button onclick="download('example text', 'fileName.txt',
+        'text/plain')">Generate text file</button>
+        <a href="" id="d_link">click here to download!</a>
         <script>
             function download(text, name, type) {
-                var a = document.getElementById("d_button");
-                var file = new Blob([text], {type: type});
-                a.href = URL.createObjectURL(file);
-                a.download = name;
+                var d_link = document.getElementById("d_link");
+                var blob_file = new Blob([text], {type: type});
+                d_link.href = URL.createObjectURL(blob_file);
+                d_link.download = name;
             }
         </script>
     </body>
